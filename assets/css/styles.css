@@ -25,6 +25,7 @@
   --white-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+  --toggle-color: #e7b531;
 
   /*========== Font and typography ==========*/
   --body-font: 'Open Sans', sans-serif;
@@ -233,10 +234,11 @@ input {
 .nav__menu {
   position: relative;
   height: 100%;
+  width: 27rem;
   /* padding-bottom: 11px; */
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 810px) {
   .nav__menu {
     position: fixed;
     background-color: var(--body-color);
@@ -894,7 +896,7 @@ input {
   .nav__list {
     display: flex;
     flex-direction: row;
-    column-gap: 3rem;
+    column-gap: 2.5rem;
     align-items: flex-end;
     /* margin-bottom: 1px; */
   }
@@ -1074,18 +1076,13 @@ input {
 .nav-logo1{
   height: 100%;
 }
-/* .nav-logo2{
-  height : 50px;
-  margin-left: -4px;
-} */
-.nav-logo3{
+.nav-logo3, .nav-logo4{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   height: 35%;
 }
-.home{
-  /* position: absolute; */
-}
 .home-title{
-  /* color: #150157; */
   color: black;
 }
 .text-shadow{
@@ -1095,4 +1092,15 @@ input {
 }
 .nav__item{
   padding-bottom: 0.72rem;
+}
+.logos{
+  position: relative;
+  height: 100%;
+  width: 30vw;
+}
+.hide-logo{
+  display: none;
+}
+.dark-toggle .nav__toggle{
+  color: var(--toggle-color);
 }

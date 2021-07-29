@@ -18,7 +18,6 @@ if(navClose){
         navMenu.classList.remove('show-menu')
     })
 }
-
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
@@ -31,20 +30,23 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
-const logoText = document.querySelector('.nav-logo3');
+const logoText = document.querySelector('.nav-logo4');
 function scrollHeader(){
     const header = document.getElementById('header')
     // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
     if(this.scrollY >= 100){
         header.classList.add('scroll-header');
         if( localStorage.getItem('selected-theme')[0]==='d' ){
-            logoText.setAttribute('src', 'assets/img/newblogo4.png');
+            logoText.classList.remove('hide-logo');
+            header.classList.add('dark-toggle');
         }else{
-            logoText.setAttribute('src', 'assets/img/newblogo3.png');
+            logoText.classList.add('hide-logo');
+            header.classList.remove('dark-toggle');
         }
     }else{
         header.classList.remove('scroll-header')
-        logoText.setAttribute('src', 'assets/img/newblogo3.png');
+        logoText.classList.add('hide-logo');
+        header.classList.remove('dark-toggle');
     }
 }
 window.addEventListener('scroll', scrollHeader)
